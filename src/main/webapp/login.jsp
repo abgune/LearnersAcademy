@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login</title>
+<title>Learner's Academy</title>
  <link type="text/css" rel="stylesheet" href="css/login.css"> 
 </head>
 <body style="background-image: url('css/background.jpg');">
