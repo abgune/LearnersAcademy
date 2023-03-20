@@ -1,6 +1,6 @@
 Body {  
   font-family: Calibri, Helvetica, sans-serif;  
-  background-color: pink;  
+  background-color: rgb(0, 128, 255);  
 
 }  
 button {   
@@ -38,5 +38,5 @@ button {
   		  
   justify-content: center;
         padding: 15px;   
-        background-color: #FFF8DC;  
+        background-color: rgb(0, 0, 0)
     }   

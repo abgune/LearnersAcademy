@@ -2,7 +2,7 @@ html, body{
 	 
 	padding:0px; 
 	font-family:Verdana, Arial, Helvetica, sans-serif;
-	margin-left: 103px; /* Same as the width of the sidenav */
+	margin-left: 103px; 
 }
 
 table {   
@@ -15,7 +15,7 @@ table {
  
 th {
 	border-bottom:1px solid gray;
-	background:none repeat scroll 0 0 #0775d3;
+	background:none repeat scroll 0 0 black;
 	padding:10px;
 	color: #FFFFFF;
 }
@@ -26,10 +26,10 @@ tr {
 }
  
 tr:nth-child(even) {background: #FFFFFF}
-tr:nth-child(odd) {background: #BBBBBB}	
+tr:nth-child(odd) {background: rgb(0, 0, 0)}	
  
 #wrapper {width: 100%; text-align: center; }
-#header {width: 72%; background: #0775d3; margin-top: 0px; padding:5px 0px 15px 0px;}
+#header {width: 72%; background: black; margin-top: 0px; padding:5px 0px 15px 0px;}
 #header h3 {width: 100%; margin:auto; color: #FFFFFF;}
 #container {width: 100%; margin:auto}
 #container h3 {color: #000;}
@@ -45,7 +45,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 	padding: 5px 10px; 
 	
 	margin-bottom: 15px;
-	background: #cccccc;
+	background: #000000;
 }
 
 
@@ -72,7 +72,7 @@ tr:nth-child(odd) {background: #BBBBBB}
 }
 
 .sidenav a:hover {
-  color: blue;
+  color: black;
 }
 
 @media screen and (max-height: 450px) {

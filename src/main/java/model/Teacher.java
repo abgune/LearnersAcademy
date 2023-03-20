@@ -1,52 +1,92 @@
 package model;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "teachers")
 public class Teacher {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String fname;
-	private String lname;
-	private int age;
-	
-	public Teacher(int id, String fname, String lname, int age) {
+	@Column(name = "name")
+	private String name;
+	@Column(name = "surname")
+	private String surname;
+	@Column(name = "dob")
+	private Date dob;
+	@Column(name = "training_area")
+	private String trainingArea;
+
+	@OneToMany(mappedBy = "teacher")
+	private Set<ClassesSub> classes = new HashSet<>();
+
+	public Teacher() {
+
+	}
+
+	public Teacher(String name, String surname, Date dob, String trainingArea) {
 		super();
-		this.id = id;
-		this.fname = fname;
-		this.lname = lname;
-		this.age = age;
+		this.name = name;
+		this.surname = surname;
+		this.dob = dob;
+		this.trainingArea = trainingArea;
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public String getName() {
+		return name;
 	}
 
-	public String getFname() {
-		return fname;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setFname(String fname) {
-		this.fname = fname;
+	public String getSurname() {
+		return surname;
 	}
 
-	public String getLname() {
-		return lname;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
-	public void setLname(String lname) {
-		this.lname = lname;
+	public Date getDob() {
+		return dob;
 	}
 
 	public int getAge() {
-		return age;
+
+		LocalDate dateOfBirth = LocalDate.ofInstant(dob.toInstant(), ZoneId.systemDefault());
+		LocalDate currentDate = LocalDate.now();
+		Period period = Period.between(dateOfBirth, currentDate);
+		return period.getYears();
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setDob(Date dob) {
+		this.dob = dob;
 	}
-	
-	
+
+	public String getTrainingArea() {
+		return trainingArea;
+	}
+
+	public void setTrainingArea(String trainingArea) {
+		this.trainingArea = trainingArea;
+	}
 
 }
